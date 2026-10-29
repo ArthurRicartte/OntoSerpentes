@@ -4,6 +4,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+#Esse arquivo tem as derivações de base_cobras.ttl via OWLRL
 cobra:Aniliidae a rdfs:Class ;
     rdfs:subClassOf cobra:NaoPeconhenta,
         cobra:Serpente ;
