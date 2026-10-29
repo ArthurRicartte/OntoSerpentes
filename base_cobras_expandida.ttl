@@ -1,0 +1,865 @@
+@prefix cobra: <http://exemplo.org/cobras#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cobra:Aniliidae a rdfs:Class ;
+    rdfs:subClassOf cobra:NaoPeconhenta,
+        cobra:Serpente ;
+    owl:sameAs cobra:Aniliidae .
+
+cobra:Bioma a rdfs:Class ;
+    owl:sameAs cobra:Bioma .
+
+cobra:BiomaCampestre a rdfs:Class ;
+    rdfs:subClassOf cobra:Bioma ;
+    owl:sameAs cobra:BiomaCampestre .
+
+cobra:BiomaFlorestal a rdfs:Class ;
+    rdfs:subClassOf cobra:Bioma ;
+    owl:sameAs cobra:BiomaFlorestal .
+
+cobra:Boidae a rdfs:Class ;
+    rdfs:subClassOf cobra:NaoPeconhenta,
+        cobra:Serpente ;
+    owl:sameAs cobra:Boidae .
+
+cobra:Colubridae a rdfs:Class ;
+    rdfs:subClassOf cobra:NaoPeconhenta,
+        cobra:Serpente ;
+    owl:sameAs cobra:Colubridae .
+
+cobra:Elapidae a rdfs:Class ;
+    rdfs:subClassOf cobra:Peconhenta,
+        cobra:Serpente ;
+    owl:sameAs cobra:Elapidae .
+
+cobra:NaoPeconhenta a rdfs:Class ;
+    rdfs:subClassOf cobra:Serpente ;
+    owl:disjointWith cobra:Peconhenta ;
+    owl:sameAs cobra:NaoPeconhenta .
+
+cobra:Peconhenta a rdfs:Class ;
+    rdfs:subClassOf cobra:Serpente ;
+    owl:sameAs cobra:Peconhenta .
+
+cobra:Serpente a rdfs:Class ;
+    owl:sameAs cobra:Serpente .
+
+cobra:TipoDenticao a rdfs:Class ;
+    owl:sameAs cobra:TipoDenticao .
+
+cobra:Viperidae a rdfs:Class ;
+    rdfs:subClassOf cobra:Peconhenta,
+        cobra:Serpente ;
+    owl:sameAs cobra:Viperidae .
+
+rdf:HTML a rdfs:Datatype ;
+    owl:sameAs rdf:HTML .
+
+rdf:PlainLiteral a rdfs:Datatype ;
+    owl:sameAs rdf:PlainLiteral .
+
+rdf:XMLLiteral a rdfs:Datatype ;
+    owl:sameAs rdf:XMLLiteral .
+
+rdf:langString a rdfs:Datatype ;
+    owl:sameAs rdf:langString .
+
+rdf:type owl:sameAs rdf:type .
+
+rdfs:Literal a rdfs:Datatype ;
+    owl:sameAs rdfs:Literal .
+
+rdfs:comment a owl:AnnotationProperty ;
+    owl:sameAs rdfs:comment .
+
+rdfs:domain owl:sameAs rdfs:domain .
+
+rdfs:isDefinedBy a owl:AnnotationProperty ;
+    owl:sameAs rdfs:isDefinedBy .
+
+rdfs:label a owl:AnnotationProperty ;
+    owl:sameAs rdfs:label .
+
+rdfs:range owl:sameAs rdfs:range .
+
+rdfs:seeAlso a owl:AnnotationProperty ;
+    owl:sameAs rdfs:seeAlso .
+
+rdfs:subClassOf owl:sameAs rdfs:subClassOf .
+
+rdfs:subPropertyOf owl:sameAs rdfs:subPropertyOf .
+
+xsd:NCName a rdfs:Datatype ;
+    owl:sameAs xsd:NCName .
+
+xsd:NMTOKEN a rdfs:Datatype ;
+    owl:sameAs xsd:NMTOKEN .
+
+xsd:Name a rdfs:Datatype ;
+    owl:sameAs xsd:Name .
+
+xsd:anyURI a rdfs:Datatype ;
+    owl:sameAs xsd:anyURI .
+
+xsd:base64Binary a rdfs:Datatype ;
+    owl:sameAs xsd:base64Binary .
+
+xsd:byte a rdfs:Datatype ;
+    owl:sameAs xsd:byte .
+
+xsd:date a rdfs:Datatype ;
+    owl:sameAs xsd:date .
+
+xsd:dateTime a rdfs:Datatype ;
+    owl:sameAs xsd:dateTime .
+
+xsd:dateTimeStamp a rdfs:Datatype ;
+    owl:sameAs xsd:dateTimeStamp .
+
+xsd:double a rdfs:Datatype ;
+    owl:sameAs xsd:double .
+
+xsd:float a rdfs:Datatype ;
+    owl:sameAs xsd:float .
+
+xsd:hexBinary a rdfs:Datatype ;
+    owl:sameAs xsd:hexBinary .
+
+xsd:int a rdfs:Datatype ;
+    owl:sameAs xsd:int .
+
+xsd:language a rdfs:Datatype ;
+    owl:sameAs xsd:language .
+
+xsd:long a rdfs:Datatype ;
+    owl:sameAs xsd:long .
+
+xsd:negativeInteger a rdfs:Datatype ;
+    owl:sameAs xsd:negativeInteger .
+
+xsd:nonNegativeInteger a rdfs:Datatype ;
+    owl:sameAs xsd:nonNegativeInteger .
+
+xsd:nonPositiveInteger a rdfs:Datatype ;
+    owl:sameAs xsd:nonPositiveInteger .
+
+xsd:normalizedString a rdfs:Datatype ;
+    owl:sameAs xsd:normalizedString .
+
+xsd:positiveInteger a rdfs:Datatype ;
+    owl:sameAs xsd:positiveInteger .
+
+xsd:short a rdfs:Datatype ;
+    owl:sameAs xsd:short .
+
+xsd:time a rdfs:Datatype ;
+    owl:sameAs xsd:time .
+
+xsd:token a rdfs:Datatype ;
+    owl:sameAs xsd:token .
+
+xsd:unsignedByte a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedByte .
+
+xsd:unsignedInt a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedInt .
+
+xsd:unsignedLong a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedLong .
+
+xsd:unsignedShort a rdfs:Datatype ;
+    owl:sameAs xsd:unsignedShort .
+
+owl:backwardCompatibleWith a owl:AnnotationProperty ;
+    owl:sameAs owl:backwardCompatibleWith .
+
+owl:deprecated a owl:AnnotationProperty ;
+    owl:sameAs owl:deprecated .
+
+owl:disjointWith owl:sameAs owl:disjointWith .
+
+owl:equivalentClass owl:sameAs owl:equivalentClass .
+
+owl:equivalentProperty owl:sameAs owl:equivalentProperty .
+
+owl:incompatibleWith a owl:AnnotationProperty ;
+    owl:sameAs owl:incompatibleWith .
+
+owl:inverseOf owl:sameAs owl:inverseOf .
+
+owl:priorVersion a owl:AnnotationProperty ;
+    owl:sameAs owl:priorVersion .
+
+owl:sameAs owl:sameAs owl:sameAs .
+
+owl:versionInfo a owl:AnnotationProperty ;
+    owl:sameAs owl:versionInfo .
+
+cobra:CobraCega a cobra:Aniliidae,
+        cobra:NaoPeconhenta,
+        cobra:Serpente ;
+    cobra:alimentacao "Anfíbios subterrâneos e peixes-cobra" ;
+    cobra:comprimentoMedioMetros 0.7 ;
+    cobra:eNoturna true ;
+    cobra:habitaBioma cobra:Amazonia ;
+    cobra:nivelRiscoAcidente 1 ;
+    cobra:nomeCientifico "Anilius scytale" ;
+    cobra:nomePopular "Cobra-cega" ;
+    cobra:possuiDenticao cobra:Aglifa ;
+    owl:sameAs cobra:CobraCega .
+
+cobra:CoralAmazonica a cobra:Elapidae,
+        cobra:Peconhenta,
+        cobra:Serpente ;
+    cobra:alimentacao "Peixes e anfíbios" ;
+    cobra:comprimentoMedioMetros 0.9 ;
+    cobra:eNoturna true ;
+    cobra:habitaBioma cobra:Amazonia ;
+    cobra:nivelRiscoAcidente 4 ;
+    cobra:nomeCientifico "Micrurus lemniscatus" ;
+    cobra:nomePopular "Coral-amazônica" ;
+    cobra:possuiDenticao cobra:Proteroglifa ;
+    owl:sameAs cobra:CoralAmazonica .
+
+owl:FunctionalProperty owl:sameAs owl:FunctionalProperty .
+
+0.8 a xsd:decimal ;
+    owl:sameAs 0.8 .
+
+0.9 a xsd:decimal ;
+    owl:sameAs 0.9 .
+
+1.1 a xsd:decimal ;
+    owl:sameAs 1.1 .
+
+1.4 a xsd:decimal ;
+    owl:sameAs 1.4 .
+
+1.5 a xsd:decimal ;
+    owl:sameAs 1.5 .
+
+2.5 a xsd:decimal ;
+    owl:sameAs 2.5 .
+
+3.0 a xsd:decimal ;
+    owl:sameAs 3.0 .
+
+4.5 a xsd:decimal ;
+    owl:sameAs 4.5 .
+
+"Anfíbios e lagartos" a xsd:string ;
+    owl:sameAs "Anfíbios e lagartos" .
+
+"Anfíbios subterrâneos e peixes-cobra" a xsd:string ;
+    owl:sameAs "Anfíbios subterrâneos e peixes-cobra" .
+
+"Anfíbios, aves e pequenos roedores" a xsd:string ;
+    owl:sameAs "Anfíbios, aves e pequenos roedores" .
+
+"Anilius scytale" a xsd:string ;
+    owl:sameAs "Anilius scytale" .
+
+"Aves e mamíferos" a xsd:string ;
+    owl:sameAs "Aves e mamíferos" .
+
+"Boa constrictor" a xsd:string ;
+    owl:sameAs "Boa constrictor" .
+
+"Boipeva / Falsa-Jararaca" a xsd:string ;
+    owl:sameAs "Boipeva / Falsa-Jararaca" .
+
+"Bothrops erythromelas" a xsd:string ;
+    owl:sameAs "Bothrops erythromelas" .
+
+"Bothrops jararaca" a xsd:string ;
+    owl:sameAs "Bothrops jararaca" .
+
+"Caninana" a xsd:string ;
+    owl:sameAs "Caninana" .
+
+"Cascavel" a xsd:string ;
+    owl:sameAs "Cascavel" .
+
+"Chironius carinatus" a xsd:string ;
+    owl:sameAs "Chironius carinatus" .
+
+"Cobra-cega" a xsd:string ;
+    owl:sameAs "Cobra-cega" .
+
+"Cobra-cipó" a xsd:string ;
+    owl:sameAs "Cobra-cipó" .
+
+"Cobra-cipó-verde" a xsd:string ;
+    owl:sameAs "Cobra-cipó-verde" .
+
+"Cobra-verde-de-jardim" a xsd:string ;
+    owl:sameAs "Cobra-verde-de-jardim" .
+
+"Coral-amazônica" a xsd:string ;
+    owl:sameAs "Coral-amazônica" .
+
+"Coral-verdadeira" a xsd:string ;
+    owl:sameAs "Coral-verdadeira" .
+
+"Corre-campo" a xsd:string ;
+    owl:sameAs "Corre-campo" .
+
+"Crotalus durissus" a xsd:string ;
+    owl:sameAs "Crotalus durissus" .
+
+"Erythrolamprus reginae" a xsd:string ;
+    owl:sameAs "Erythrolamprus reginae" .
+
+"Eunectes murinus" a xsd:string ;
+    owl:sameAs "Eunectes murinus" .
+
+"Eunectes notaeus" a xsd:string ;
+    owl:sameAs "Eunectes notaeus" .
+
+"Falsa-coral" a xsd:string ;
+    owl:sameAs "Falsa-coral" .
+
+"Jararaca" a xsd:string ;
+    owl:sameAs "Jararaca" .
+
+"Jararaca-da-Caatinga" a xsd:string ;
+    owl:sameAs "Jararaca-da-Caatinga" .
+
+"Jiboia" a xsd:string ;
+    owl:sameAs "Jiboia" .
+
+"Lachesis muta" a xsd:string ;
+    owl:sameAs "Lachesis muta" .
+
+"Lagartos, ovos e pequenos mamíferos" a xsd:string ;
+    owl:sameAs "Lagartos, ovos e pequenos mamíferos" .
+
+"Micrurus ibiboboca" a xsd:string ;
+    owl:sameAs "Micrurus ibiboboca" .
+
+"Micrurus lemniscatus" a xsd:string ;
+    owl:sameAs "Micrurus lemniscatus" .
+
+"Mussurana" a xsd:string ;
+    owl:sameAs "Mussurana" .
+
+"Outras serpentes" a xsd:string ;
+    owl:sameAs "Outras serpentes" .
+
+"Outras serpentes e lagartos" a xsd:string ;
+    owl:sameAs "Outras serpentes e lagartos" .
+
+"Oxyrhopus trigeminus" a xsd:string ;
+    owl:sameAs "Oxyrhopus trigeminus" .
+
+"Peixes e anfíbios" a xsd:string ;
+    owl:sameAs "Peixes e anfíbios" .
+
+"Peixes e jacarés pequenos" a xsd:string ;
+    owl:sameAs "Peixes e jacarés pequenos" .
+
+"Peixes, aves e mamíferos" a xsd:string ;
+    owl:sameAs "Peixes, aves e mamíferos" .
+
+"Pequenos e médios mamíferos" a xsd:string ;
+    owl:sameAs "Pequenos e médios mamíferos" .
+
+"Pequenos roedores e aves" a xsd:string ;
+    owl:sameAs "Pequenos roedores e aves" .
+
+"Philodryas nattereri" a xsd:string ;
+    owl:sameAs "Philodryas nattereri" .
+
+"Philodryas olfersii" a xsd:string ;
+    owl:sameAs "Philodryas olfersii" .
+
+"Pseudoboa nigra" a xsd:string ;
+    owl:sameAs "Pseudoboa nigra" .
+
+"Roedores e pequenos mamíferos" a xsd:string ;
+    owl:sameAs "Roedores e pequenos mamíferos" .
+
+"Roedores e sapos" a xsd:string ;
+    owl:sameAs "Roedores e sapos" .
+
+"Sapos e girinos" a xsd:string ;
+    owl:sameAs "Sapos e girinos" .
+
+"Sapos e rãs" a xsd:string ;
+    owl:sameAs "Sapos e rãs" .
+
+"Spilotes pullatus" a xsd:string ;
+    owl:sameAs "Spilotes pullatus" .
+
+"Sucuri-amarela" a xsd:string ;
+    owl:sameAs "Sucuri-amarela" .
+
+"Sucuri-verde" a xsd:string ;
+    owl:sameAs "Sucuri-verde" .
+
+"Surucucu-pico-de-jaca" a xsd:string ;
+    owl:sameAs "Surucucu-pico-de-jaca" .
+
+"Xenodon merremii" a xsd:string ;
+    owl:sameAs "Xenodon merremii" .
+
+cobra:Caninana a cobra:Colubridae,
+        cobra:NaoPeconhenta,
+        cobra:Serpente ;
+    cobra:alimentacao "Pequenos roedores e aves" ;
+    cobra:comprimentoMedioMetros 2.0 ;
+    cobra:eNoturna false ;
+    cobra:habitaBioma cobra:Cerrado,
+        cobra:MataAtlantica ;
+    cobra:nivelRiscoAcidente 1 ;
+    cobra:nomeCientifico "Spilotes pullatus" ;
+    cobra:nomePopular "Caninana" ;
+    cobra:possuiDenticao cobra:Aglifa ;
+    owl:sameAs cobra:Caninana .
+
+cobra:CobraCipo a cobra:Colubridae,
+        cobra:NaoPeconhenta,
+        cobra:Serpente ;
+    cobra:alimentacao "Anfíbios e lagartos" ;
+    cobra:comprimentoMedioMetros 1.2 ;
+    cobra:eNoturna false ;
+    cobra:habitaBioma cobra:Amazonia,
+        cobra:MataAtlantica ;
+    cobra:nivelRiscoAcidente 1 ;
+    cobra:nomeCientifico "Chironius carinatus" ;
+    cobra:nomePopular "Cobra-cipó" ;
+    cobra:possuiDenticao cobra:Aglifa ;
+    owl:sameAs cobra:CobraCipo .
+
+cobra:CobraVerde a cobra:Colubridae,
+        cobra:NaoPeconhenta,
+        cobra:Serpente ;
+    cobra:alimentacao "Sapos e girinos" ;
+    cobra:comprimentoMedioMetros 0.6 ;
+    cobra:eNoturna false ;
+    cobra:habitaBioma cobra:Amazonia,
+        cobra:MataAtlantica ;
+    cobra:nivelRiscoAcidente 1 ;
+    cobra:nomeCientifico "Erythrolamprus reginae" ;
+    cobra:nomePopular "Cobra-verde-de-jardim" ;
+    cobra:possuiDenticao cobra:Opistoglifa ;
+    owl:sameAs cobra:CobraVerde .
+
+cobra:JararacaComum a cobra:Peconhenta,
+        cobra:Serpente,
+        cobra:Viperidae ;
+    cobra:alimentacao "Roedores e sapos" ;
+    cobra:comprimentoMedioMetros 1.2 ;
+    cobra:eNoturna true ;
+    cobra:habitaBioma cobra:MataAtlantica ;
+    cobra:nivelRiscoAcidente 5 ;
+    cobra:nomeCientifico "Bothrops jararaca" ;
+    cobra:nomePopular "Jararaca" ;
+    cobra:possuiDenticao cobra:Solenoglifa ;
+    cobra:temParenteProximo cobra:JararacaDaCaatinga ;
+    owl:sameAs cobra:JararacaComum .
+
+cobra:Mussurana a cobra:Colubridae,
+        cobra:NaoPeconhenta,
+        cobra:Serpente ;
+    cobra:alimentacao "Outras serpentes" ;
+    cobra:comprimentoMedioMetros 1.4 ;
+    cobra:eNoturna true ;
+    cobra:habitaBioma cobra:Caatinga,
+        cobra:Cerrado ;
+    cobra:nivelRiscoAcidente 1 ;
+    cobra:nomeCientifico "Pseudoboa nigra" ;
+    cobra:nomePopular "Mussurana" ;
+    cobra:possuiDenticao cobra:Opistoglifa ;
+    owl:sameAs cobra:Mussurana .
+
+cobra:Pantanal a cobra:Bioma,
+        cobra:BiomaCampestre ;
+    cobra:eHabitadoPor cobra:SucuriAmarela,
+        cobra:SucuriVerde ;
+    owl:sameAs cobra:Pantanal .
+
+cobra:Proteroglifa a cobra:TipoDenticao ;
+    owl:sameAs cobra:Proteroglifa .
+
+cobra:SucuriAmarela a cobra:Boidae,
+        cobra:NaoPeconhenta,
+        cobra:Serpente ;
+    cobra:alimentacao "Peixes e jacarés pequenos" ;
+    cobra:comprimentoMedioMetros 3.0 ;
+    cobra:eNoturna false ;
+    cobra:habitaBioma cobra:Pantanal ;
+    cobra:nivelRiscoAcidente 2 ;
+    cobra:nomeCientifico "Eunectes notaeus" ;
+    cobra:nomePopular "Sucuri-amarela" ;
+    cobra:possuiDenticao cobra:Aglifa ;
+    cobra:temParenteProximo cobra:SucuriVerde ;
+    owl:sameAs cobra:SucuriAmarela .
+
+cobra:Surucucu a cobra:Peconhenta,
+        cobra:Serpente,
+        cobra:Viperidae ;
+    cobra:alimentacao "Pequenos e médios mamíferos" ;
+    cobra:comprimentoMedioMetros 2.5 ;
+    cobra:eNoturna true ;
+    cobra:habitaBioma cobra:Amazonia,
+        cobra:MataAtlantica ;
+    cobra:nivelRiscoAcidente 5 ;
+    cobra:nomeCientifico "Lachesis muta" ;
+    cobra:nomePopular "Surucucu-pico-de-jaca" ;
+    cobra:possuiDenticao cobra:Solenoglifa ;
+    owl:sameAs cobra:Surucucu .
+
+cobra:alimentacao a owl:DatatypeProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf cobra:alimentacao ;
+    owl:equivalentProperty cobra:alimentacao ;
+    owl:sameAs cobra:alimentacao .
+
+cobra:comprimentoMedioMetros a owl:DatatypeProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range xsd:decimal ;
+    rdfs:subPropertyOf cobra:comprimentoMedioMetros ;
+    owl:equivalentProperty cobra:comprimentoMedioMetros ;
+    owl:sameAs cobra:comprimentoMedioMetros .
+
+cobra:eHabitadoPor a owl:ObjectProperty ;
+    rdfs:subPropertyOf cobra:eHabitadoPor ;
+    owl:equivalentProperty cobra:eHabitadoPor ;
+    owl:inverseOf cobra:habitaBioma ;
+    owl:sameAs cobra:eHabitadoPor .
+
+cobra:eNoturna a owl:DatatypeProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range xsd:boolean ;
+    rdfs:subPropertyOf cobra:eNoturna ;
+    owl:equivalentProperty cobra:eNoturna ;
+    owl:sameAs cobra:eNoturna .
+
+cobra:eSimpatricaCom a owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range cobra:Serpente ;
+    rdfs:subPropertyOf cobra:eSimpatricaCom ;
+    owl:equivalentProperty cobra:eSimpatricaCom ;
+    owl:sameAs cobra:eSimpatricaCom .
+
+cobra:nivelRiscoAcidente a owl:DatatypeProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf cobra:nivelRiscoAcidente ;
+    owl:equivalentProperty cobra:nivelRiscoAcidente ;
+    owl:sameAs cobra:nivelRiscoAcidente .
+
+cobra:nomeCientifico a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf cobra:nomeCientifico ;
+    owl:equivalentProperty cobra:nomeCientifico ;
+    owl:sameAs cobra:nomeCientifico .
+
+cobra:nomePopular a owl:DatatypeProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf cobra:nomePopular ;
+    owl:equivalentProperty cobra:nomePopular ;
+    owl:sameAs cobra:nomePopular .
+
+cobra:possuiDenticao a owl:ObjectProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range cobra:TipoDenticao ;
+    rdfs:subPropertyOf cobra:possuiDenticao ;
+    owl:equivalentProperty cobra:possuiDenticao ;
+    owl:sameAs cobra:possuiDenticao .
+
+cobra:temParenteProximo a owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range cobra:Serpente ;
+    rdfs:subPropertyOf cobra:temParenteProximo ;
+    owl:equivalentProperty cobra:temParenteProximo ;
+    owl:sameAs cobra:temParenteProximo .
+
+owl:Class owl:sameAs owl:Class .
+
+owl:Nothing a owl:Class ;
+    rdfs:subClassOf owl:Nothing,
+        owl:Thing ;
+    owl:equivalentClass owl:Nothing ;
+    owl:sameAs owl:Nothing .
+
+owl:SymmetricProperty owl:sameAs owl:SymmetricProperty .
+
+0.6 a xsd:decimal ;
+    owl:sameAs 0.6 .
+
+0.7 a xsd:decimal ;
+    owl:sameAs 0.7 .
+
+1.0 a xsd:decimal ;
+    owl:sameAs 1.0 .
+
+1.2 a xsd:decimal ;
+    owl:sameAs 1.2 .
+
+2.0 a xsd:decimal ;
+    owl:sameAs 2.0 .
+
+4 a xsd:decimal,
+        xsd:integer ;
+    owl:sameAs 4 .
+
+"Pequenos roedores e lagartos" a xsd:string ;
+    owl:sameAs "Pequenos roedores e lagartos" .
+
+cobra:Cascavel a cobra:Peconhenta,
+        cobra:Serpente,
+        cobra:Viperidae ;
+    cobra:alimentacao "Roedores e pequenos mamíferos" ;
+    cobra:comprimentoMedioMetros 1.5 ;
+    cobra:eNoturna true ;
+    cobra:eSimpatricaCom cobra:JararacaDaCaatinga ;
+    cobra:habitaBioma cobra:Caatinga,
+        cobra:Cerrado ;
+    cobra:nivelRiscoAcidente 5 ;
+    cobra:nomeCientifico "Crotalus durissus" ;
+    cobra:nomePopular "Cascavel" ;
+    cobra:possuiDenticao cobra:Solenoglifa ;
+    owl:sameAs cobra:Cascavel .
+
+cobra:CoralVerdadeira a cobra:Elapidae,
+        cobra:Peconhenta,
+        cobra:Serpente ;
+    cobra:alimentacao "Outras serpentes e lagartos" ;
+    cobra:comprimentoMedioMetros 0.8 ;
+    cobra:eNoturna true ;
+    cobra:eSimpatricaCom cobra:FalsaCoral ;
+    cobra:habitaBioma cobra:Caatinga,
+        cobra:MataAtlantica ;
+    cobra:nivelRiscoAcidente 4 ;
+    cobra:nomeCientifico "Micrurus ibiboboca" ;
+    cobra:nomePopular "Coral-verdadeira" ;
+    cobra:possuiDenticao cobra:Proteroglifa ;
+    owl:sameAs cobra:CoralVerdadeira .
+
+cobra:CorreCampo a cobra:Colubridae,
+        cobra:NaoPeconhenta,
+        cobra:Serpente ;
+    cobra:alimentacao "Lagartos, ovos e pequenos mamíferos" ;
+    cobra:comprimentoMedioMetros 1.1 ;
+    cobra:eNoturna false ;
+    cobra:habitaBioma cobra:Caatinga,
+        cobra:Cerrado ;
+    cobra:nivelRiscoAcidente 2 ;
+    cobra:nomeCientifico "Philodryas nattereri" ;
+    cobra:nomePopular "Corre-campo" ;
+    cobra:possuiDenticao cobra:Opistoglifa ;
+    cobra:temParenteProximo cobra:CobraCipoVerde ;
+    owl:sameAs cobra:CorreCampo .
+
+cobra:FalsaCoral a cobra:Colubridae,
+        cobra:NaoPeconhenta,
+        cobra:Serpente ;
+    cobra:alimentacao "Pequenos roedores e lagartos" ;
+    cobra:comprimentoMedioMetros 0.7 ;
+    cobra:eNoturna true ;
+    cobra:eSimpatricaCom cobra:CoralVerdadeira ;
+    cobra:habitaBioma cobra:Caatinga,
+        cobra:Cerrado ;
+    cobra:nivelRiscoAcidente 1 ;
+    cobra:nomeCientifico "Oxyrhopus trigeminus" ;
+    cobra:nomePopular "Falsa-coral" ;
+    cobra:possuiDenticao cobra:Opistoglifa ;
+    owl:sameAs cobra:FalsaCoral .
+
+cobra:FalsaJararaca a cobra:Colubridae,
+        cobra:NaoPeconhenta,
+        cobra:Serpente ;
+    cobra:alimentacao "Sapos e rãs" ;
+    cobra:comprimentoMedioMetros 1.0 ;
+    cobra:eNoturna false ;
+    cobra:habitaBioma cobra:Caatinga,
+        cobra:Cerrado,
+        cobra:MataAtlantica ;
+    cobra:nivelRiscoAcidente 1 ;
+    cobra:nomeCientifico "Xenodon merremii" ;
+    cobra:nomePopular "Boipeva / Falsa-Jararaca" ;
+    cobra:possuiDenticao cobra:Opistoglifa ;
+    owl:sameAs cobra:FalsaJararaca .
+
+cobra:JararacaDaCaatinga a cobra:Peconhenta,
+        cobra:Serpente,
+        cobra:Viperidae ;
+    cobra:alimentacao "Pequenos roedores e lagartos" ;
+    cobra:comprimentoMedioMetros 0.6 ;
+    cobra:eNoturna true ;
+    cobra:eSimpatricaCom cobra:Cascavel ;
+    cobra:habitaBioma cobra:Caatinga ;
+    cobra:nivelRiscoAcidente 5 ;
+    cobra:nomeCientifico "Bothrops erythromelas" ;
+    cobra:nomePopular "Jararaca-da-Caatinga" ;
+    cobra:possuiDenticao cobra:Solenoglifa ;
+    cobra:temParenteProximo cobra:JararacaComum ;
+    owl:sameAs cobra:JararacaDaCaatinga .
+
+cobra:Jiboia a cobra:Boidae,
+        cobra:NaoPeconhenta,
+        cobra:Serpente ;
+    cobra:alimentacao "Aves e mamíferos" ;
+    cobra:comprimentoMedioMetros 2.0 ;
+    cobra:eNoturna true ;
+    cobra:habitaBioma cobra:Amazonia,
+        cobra:Caatinga,
+        cobra:Cerrado ;
+    cobra:nivelRiscoAcidente 1 ;
+    cobra:nomeCientifico "Boa constrictor" ;
+    cobra:nomePopular "Jiboia" ;
+    cobra:possuiDenticao cobra:Aglifa ;
+    owl:sameAs cobra:Jiboia .
+
+cobra:SucuriVerde a cobra:Boidae,
+        cobra:NaoPeconhenta,
+        cobra:Serpente ;
+    cobra:alimentacao "Peixes, aves e mamíferos" ;
+    cobra:comprimentoMedioMetros 4.5 ;
+    cobra:eNoturna false ;
+    cobra:habitaBioma cobra:Amazonia,
+        cobra:Pantanal ;
+    cobra:nivelRiscoAcidente 2 ;
+    cobra:nomeCientifico "Eunectes murinus" ;
+    cobra:nomePopular "Sucuri-verde" ;
+    cobra:possuiDenticao cobra:Aglifa ;
+    cobra:temParenteProximo cobra:SucuriAmarela ;
+    owl:sameAs cobra:SucuriVerde .
+
+cobra:habitaBioma a owl:ObjectProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range cobra:Bioma ;
+    rdfs:subPropertyOf cobra:habitaBioma ;
+    owl:equivalentProperty cobra:habitaBioma ;
+    owl:sameAs cobra:habitaBioma .
+
+xsd:boolean a rdfs:Datatype ;
+    owl:disjointWith xsd:decimal ;
+    owl:sameAs xsd:boolean .
+
+owl:Thing a owl:Class ;
+    rdfs:subClassOf owl:Thing ;
+    owl:equivalentClass owl:Thing ;
+    owl:sameAs owl:Thing .
+
+cobra:CobraCipoVerde a cobra:Colubridae,
+        cobra:NaoPeconhenta,
+        cobra:Serpente ;
+    cobra:alimentacao "Anfíbios, aves e pequenos roedores" ;
+    cobra:comprimentoMedioMetros 1.0 ;
+    cobra:eNoturna false ;
+    cobra:habitaBioma cobra:Caatinga,
+        cobra:Cerrado,
+        cobra:MataAtlantica ;
+    cobra:nivelRiscoAcidente 2 ;
+    cobra:nomeCientifico "Philodryas olfersii" ;
+    cobra:nomePopular "Cobra-cipó-verde" ;
+    cobra:possuiDenticao cobra:Opistoglifa ;
+    cobra:temParenteProximo cobra:CorreCampo ;
+    owl:sameAs cobra:CobraCipoVerde .
+
+cobra:Solenoglifa a cobra:TipoDenticao ;
+    owl:sameAs cobra:Solenoglifa .
+
+2 a xsd:decimal,
+        xsd:integer ;
+    owl:sameAs 2 .
+
+5 a xsd:decimal,
+        xsd:integer ;
+    owl:sameAs 5 .
+
+xsd:integer a rdfs:Datatype ;
+    owl:sameAs xsd:integer .
+
+owl:ObjectProperty owl:sameAs owl:ObjectProperty .
+
+cobra:Aglifa a cobra:TipoDenticao ;
+    owl:sameAs cobra:Aglifa .
+
+cobra:Opistoglifa a cobra:TipoDenticao ;
+    owl:sameAs cobra:Opistoglifa .
+
+owl:DatatypeProperty owl:sameAs owl:DatatypeProperty .
+
+cobra:Amazonia a cobra:Bioma,
+        cobra:BiomaFlorestal ;
+    cobra:eHabitadoPor cobra:CobraCega,
+        cobra:CobraCipo,
+        cobra:CobraVerde,
+        cobra:CoralAmazonica,
+        cobra:Jiboia,
+        cobra:SucuriVerde,
+        cobra:Surucucu ;
+    owl:sameAs cobra:Amazonia .
+
+cobra:Cerrado a cobra:Bioma,
+        cobra:BiomaCampestre ;
+    cobra:eHabitadoPor cobra:Caninana,
+        cobra:Cascavel,
+        cobra:CobraCipoVerde,
+        cobra:CorreCampo,
+        cobra:FalsaCoral,
+        cobra:FalsaJararaca,
+        cobra:Jiboia,
+        cobra:Mussurana ;
+    owl:sameAs cobra:Cerrado .
+
+cobra:MataAtlantica a cobra:Bioma,
+        cobra:BiomaFlorestal ;
+    cobra:eHabitadoPor cobra:Caninana,
+        cobra:CobraCipo,
+        cobra:CobraCipoVerde,
+        cobra:CobraVerde,
+        cobra:CoralVerdadeira,
+        cobra:FalsaJararaca,
+        cobra:JararacaComum,
+        cobra:Surucucu ;
+    owl:sameAs cobra:MataAtlantica .
+
+false a xsd:boolean ;
+    owl:sameAs false .
+
+1 a xsd:decimal,
+        xsd:integer ;
+    owl:sameAs 1 .
+
+cobra:Caatinga a cobra:Bioma,
+        cobra:BiomaCampestre ;
+    cobra:eHabitadoPor cobra:Cascavel,
+        cobra:CobraCipoVerde,
+        cobra:CoralVerdadeira,
+        cobra:CorreCampo,
+        cobra:FalsaCoral,
+        cobra:FalsaJararaca,
+        cobra:JararacaDaCaatinga,
+        cobra:Jiboia,
+        cobra:Mussurana ;
+    owl:sameAs cobra:Caatinga .
+
+owl:AnnotationProperty owl:sameAs owl:AnnotationProperty .
+
+true a xsd:boolean ;
+    owl:sameAs true .
+
+rdfs:Class owl:sameAs rdfs:Class .
+
+xsd:decimal a rdfs:Datatype ;
+    owl:sameAs xsd:decimal .
+
+rdfs:Datatype owl:sameAs rdfs:Datatype .
+
+xsd:string a rdfs:Datatype ;
+    owl:sameAs xsd:string .
+

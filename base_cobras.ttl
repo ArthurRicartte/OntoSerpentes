@@ -1,0 +1,336 @@
+@prefix cobra: <http://exemplo.org/cobras#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+# ==============================================================================
+# Hierarquia de classes (12 Classes com pelo menos 2 níveis de profundidade)
+# ==============================================================================
+
+# --- Raiz 1: Serpentes ---
+cobra:Serpente a rdfs:Class .
+
+# Nível 1 abaixo da Raiz 1
+cobra:Peconhenta a rdfs:Class ;
+    rdfs:subClassOf cobra:Serpente .
+
+cobra:NaoPeconhenta a rdfs:Class ;
+    rdfs:subClassOf cobra:Serpente ;
+    owl:disjointWith cobra:Peconhenta . # Axioma OWL 1: Disjunção de classes
+
+# Nível 2 abaixo da Raiz 1 (Famílias Peçonhentas)
+cobra:Viperidae a rdfs:Class ;
+    rdfs:subClassOf cobra:Peconhenta .
+
+cobra:Elapidae a rdfs:Class ;
+    rdfs:subClassOf cobra:Peconhenta .
+
+# Nível 2 abaixo da Raiz 1 (Famílias Não Peçonhentas)
+cobra:Boidae a rdfs:Class ;
+    rdfs:subClassOf cobra:NaoPeconhenta .
+
+cobra:Colubridae a rdfs:Class ;
+    rdfs:subClassOf cobra:NaoPeconhenta .
+
+cobra:Aniliidae a rdfs:Class ;
+    rdfs:subClassOf cobra:NaoPeconhenta .
+
+
+# --- Raiz 2: Biomas ---
+cobra:Bioma a rdfs:Class .
+
+# Nível 1 abaixo da Raiz 2
+cobra:BiomaFlorestal a rdfs:Class ;
+    rdfs:subClassOf cobra:Bioma .
+
+cobra:BiomaCampestre a rdfs:Class ;
+    rdfs:subClassOf cobra:Bioma .
+
+
+# --- Raiz 3: Dentição ---
+cobra:TipoDenticao a rdfs:Class .
+
+
+# ==============================================================================
+# Propriedades de obejtos (5 ObjectProperties com domain, range e OWL)
+# ==============================================================================
+
+# Relação Serpente -> Bioma
+cobra:habitaBioma a owl:ObjectProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range cobra:Bioma .
+
+# Relação Inversa Bioma -> Serpente
+cobra:eHabitadoPor a owl:ObjectProperty ;
+    owl:inverseOf cobra:habitaBioma . # Axioma OWL 2: Inversa
+
+# Relação Serpente -> TipoDenticao
+cobra:possuiDenticao a owl:ObjectProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range cobra:TipoDenticao .
+
+# Relação Simétrica entre Serpentes que compartilham o mesmo ecossistema
+cobra:eSimpatricaCom a owl:ObjectProperty, owl:SymmetricProperty ; # Axioma OWL 3: Simetria
+    rdfs:domain cobra:Serpente ;
+    rdfs:range cobra:Serpente .
+
+# Relação Simétrica de Parentesco Taxonômico/Evolutivo entre Serpentes
+cobra:temParenteProximo a owl:ObjectProperty, owl:SymmetricProperty ; # Axioma OWL 4: Simetria
+    rdfs:domain cobra:Serpente ;
+    rdfs:range cobra:Serpente .
+
+
+# ==============================================================================
+# Propriedades de dados (6 DatatypeProperties com domain e range)
+# ==============================================================================
+
+# Nome Científico (Único por espécie)
+cobra:nomeCientifico a owl:DatatypeProperty, owl:FunctionalProperty ; # Axioma OWL 5: Funcional
+    rdfs:domain cobra:Serpente ;
+    rdfs:range xsd:string .
+
+# Nome Popular
+cobra:nomePopular a owl:DatatypeProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range xsd:string .
+
+# Comprimento Médio em metros
+cobra:comprimentoMedioMetros a owl:DatatypeProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range xsd:decimal .
+
+# Hábito Noturno (Verdadeiro/Falso)
+cobra:eNoturna a owl:DatatypeProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range xsd:boolean .
+
+# Nível de Risco de Acidente Ofídico (escala de 1 a 5)
+cobra:nivelRiscoAcidente a owl:DatatypeProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range xsd:integer .
+
+# Hábitos Alimentares
+cobra:alimentacao a owl:DatatypeProperty ;
+    rdfs:domain cobra:Serpente ;
+    rdfs:range xsd:string .
+
+# ==============================================================================
+# Instâncias (27 Instâncias no Total)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Instâncias de Biomas (5)
+# ------------------------------------------------------------------------------
+cobra:Caatinga a cobra:BiomaCampestre .
+cobra:Cerrado a cobra:BiomaCampestre .
+cobra:MataAtlantica a cobra:BiomaFlorestal .
+cobra:Amazonia a cobra:BiomaFlorestal .
+cobra:Pantanal a cobra:BiomaCampestre .
+
+# ------------------------------------------------------------------------------
+# Instâncias de Tipos de Dentição (4)
+# ------------------------------------------------------------------------------
+cobra:Solenoglifa a cobra:TipoDenticao .
+cobra:Proteroglifa a cobra:TipoDenticao .
+cobra:Opistoglifa a cobra:TipoDenticao .
+cobra:Aglifa a cobra:TipoDenticao .
+
+# ------------------------------------------------------------------------------
+# Instâncias de Viperidae (4 Espécies - Peçonhentas)
+# ------------------------------------------------------------------------------
+cobra:JararacaDaCaatinga a cobra:Viperidae ;
+    cobra:nomeCientifico "Bothrops erythromelas" ;
+    cobra:nomePopular "Jararaca-da-Caatinga" ;
+    cobra:comprimentoMedioMetros 0.6 ;
+    cobra:eNoturna true ;
+    cobra:nivelRiscoAcidente 5 ;
+    cobra:alimentacao "Pequenos roedores e lagartos" ;
+    cobra:habitaBioma cobra:Caatinga ;
+    cobra:possuiDenticao cobra:Solenoglifa ;
+    cobra:eSimpatricaCom cobra:Cascavel ;
+    cobra:temParenteProximo cobra:JararacaComum .
+
+cobra:JararacaComum a cobra:Viperidae ;
+    cobra:nomeCientifico "Bothrops jararaca" ;
+    cobra:nomePopular "Jararaca" ;
+    cobra:comprimentoMedioMetros 1.2 ;
+    cobra:eNoturna true ;
+    cobra:nivelRiscoAcidente 5 ;
+    cobra:alimentacao "Roedores e sapos" ;
+    cobra:habitaBioma cobra:MataAtlantica ;
+    cobra:possuiDenticao cobra:Solenoglifa .
+
+cobra:Cascavel a cobra:Viperidae ;
+    cobra:nomeCientifico "Crotalus durissus" ;
+    cobra:nomePopular "Cascavel" ;
+    cobra:comprimentoMedioMetros 1.5 ;
+    cobra:eNoturna true ;
+    cobra:nivelRiscoAcidente 5 ;
+    cobra:alimentacao "Roedores e pequenos mamíferos" ;
+    cobra:habitaBioma cobra:Caatinga, cobra:Cerrado ;
+    cobra:possuiDenticao cobra:Solenoglifa .
+
+cobra:Surucucu a cobra:Viperidae ;
+    cobra:nomeCientifico "Lachesis muta" ;
+    cobra:nomePopular "Surucucu-pico-de-jaca" ;
+    cobra:comprimentoMedioMetros 2.5 ;
+    cobra:eNoturna true ;
+    cobra:nivelRiscoAcidente 5 ;
+    cobra:alimentacao "Pequenos e médios mamíferos" ;
+    cobra:habitaBioma cobra:Amazonia, cobra:MataAtlantica ;
+    cobra:possuiDenticao cobra:Solenoglifa .
+
+# ------------------------------------------------------------------------------
+# Instâncias de Elapidae (2 Espécies - Peçonhentas)
+# ------------------------------------------------------------------------------
+cobra:CoralVerdadeira a cobra:Elapidae ;
+    cobra:nomeCientifico "Micrurus ibiboboca" ;
+    cobra:nomePopular "Coral-verdadeira" ;
+    cobra:comprimentoMedioMetros 0.8 ;
+    cobra:eNoturna true ;
+    cobra:nivelRiscoAcidente 4 ;
+    cobra:alimentacao "Outras serpentes e lagartos" ;
+    cobra:habitaBioma cobra:Caatinga, cobra:MataAtlantica ;
+    cobra:possuiDenticao cobra:Proteroglifa .
+
+cobra:CoralAmazonica a cobra:Elapidae ;
+    cobra:nomeCientifico "Micrurus lemniscatus" ;
+    cobra:nomePopular "Coral-amazônica" ;
+    cobra:comprimentoMedioMetros 0.9 ;
+    cobra:eNoturna true ;
+    cobra:nivelRiscoAcidente 4 ;
+    cobra:alimentacao "Peixes e anfíbios" ;
+    cobra:habitaBioma cobra:Amazonia ;
+    cobra:possuiDenticao cobra:Proteroglifa .
+
+# ------------------------------------------------------------------------------
+# Instâncias de Boidae (3 Espécies - Não Peçonhentas)
+# ------------------------------------------------------------------------------
+cobra:Jiboia a cobra:Boidae ;
+    cobra:nomeCientifico "Boa constrictor" ;
+    cobra:nomePopular "Jiboia" ;
+    cobra:comprimentoMedioMetros 2.0 ;
+    cobra:eNoturna true ;
+    cobra:nivelRiscoAcidente 1 ;
+    cobra:alimentacao "Aves e mamíferos" ;
+    cobra:habitaBioma cobra:Caatinga, cobra:Cerrado, cobra:Amazonia ;
+    cobra:possuiDenticao cobra:Aglifa .
+
+cobra:SucuriVerde a cobra:Boidae ;
+    cobra:nomeCientifico "Eunectes murinus" ;
+    cobra:nomePopular "Sucuri-verde" ;
+    cobra:comprimentoMedioMetros 4.5 ;
+    cobra:eNoturna false ;
+    cobra:nivelRiscoAcidente 2 ;
+    cobra:alimentacao "Peixes, aves e mamíferos" ;
+    cobra:habitaBioma cobra:Amazonia, cobra:Pantanal ;
+    cobra:possuiDenticao cobra:Aglifa .
+
+cobra:SucuriAmarela a cobra:Boidae ;
+    cobra:nomeCientifico "Eunectes notaeus" ;
+    cobra:nomePopular "Sucuri-amarela" ;
+    cobra:comprimentoMedioMetros 3.0 ;
+    cobra:eNoturna false ;
+    cobra:nivelRiscoAcidente 2 ;
+    cobra:alimentacao "Peixes e jacarés pequenos" ;
+    cobra:habitaBioma cobra:Pantanal ;
+    cobra:possuiDenticao cobra:Aglifa ;
+    cobra:temParenteProximo cobra:SucuriVerde .
+
+# ------------------------------------------------------------------------------
+# Instâncias de Colubridae (8 Espécies - Não Peçonhentas)
+# ------------------------------------------------------------------------------
+cobra:FalsaCoral a cobra:Colubridae ;
+    cobra:nomeCientifico "Oxyrhopus trigeminus" ;
+    cobra:nomePopular "Falsa-coral" ;
+    cobra:comprimentoMedioMetros 0.7 ;
+    cobra:eNoturna true ;
+    cobra:nivelRiscoAcidente 1 ;
+    cobra:alimentacao "Pequenos roedores e lagartos" ;
+    cobra:habitaBioma cobra:Caatinga, cobra:Cerrado ;
+    cobra:possuiDenticao cobra:Opistoglifa ;
+    cobra:eSimpatricaCom cobra:CoralVerdadeira .
+
+cobra:CobraCipoVerde a cobra:Colubridae ;
+    cobra:nomeCientifico "Philodryas olfersii" ;
+    cobra:nomePopular "Cobra-cipó-verde" ;
+    cobra:comprimentoMedioMetros 1.0 ;
+    cobra:eNoturna false ;
+    cobra:nivelRiscoAcidente 2 ;
+    cobra:alimentacao "Anfíbios, aves e pequenos roedores" ;
+    cobra:habitaBioma cobra:Caatinga, cobra:Cerrado, cobra:MataAtlantica ;
+    cobra:possuiDenticao cobra:Opistoglifa ;
+    cobra:temParenteProximo cobra:CorreCampo .
+
+cobra:CorreCampo a cobra:Colubridae ;
+    cobra:nomeCientifico "Philodryas nattereri" ;
+    cobra:nomePopular "Corre-campo" ;
+    cobra:comprimentoMedioMetros 1.1 ;
+    cobra:eNoturna false ;
+    cobra:nivelRiscoAcidente 2 ;
+    cobra:alimentacao "Lagartos, ovos e pequenos mamíferos" ;
+    cobra:habitaBioma cobra:Caatinga, cobra:Cerrado ;
+    cobra:possuiDenticao cobra:Opistoglifa .
+
+cobra:Caninana a cobra:Colubridae ;
+    cobra:nomeCientifico "Spilotes pullatus" ;
+    cobra:nomePopular "Caninana" ;
+    cobra:comprimentoMedioMetros 2.0 ;
+    cobra:eNoturna false ;
+    cobra:nivelRiscoAcidente 1 ;
+    cobra:alimentacao "Pequenos roedores e aves" ;
+    cobra:habitaBioma cobra:MataAtlantica, cobra:Cerrado ;
+    cobra:possuiDenticao cobra:Aglifa .
+
+cobra:CobraCipo a cobra:Colubridae ;
+    cobra:nomeCientifico "Chironius carinatus" ;
+    cobra:nomePopular "Cobra-cipó" ;
+    cobra:comprimentoMedioMetros 1.2 ;
+    cobra:eNoturna false ;
+    cobra:nivelRiscoAcidente 1 ;
+    cobra:alimentacao "Anfíbios e lagartos" ;
+    cobra:habitaBioma cobra:MataAtlantica, cobra:Amazonia ;
+    cobra:possuiDenticao cobra:Aglifa .
+
+cobra:Mussurana a cobra:Colubridae ;
+    cobra:nomeCientifico "Pseudoboa nigra" ;
+    cobra:nomePopular "Mussurana" ;
+    cobra:comprimentoMedioMetros 1.4 ;
+    cobra:eNoturna true ;
+    cobra:nivelRiscoAcidente 1 ;
+    cobra:alimentacao "Outras serpentes" ;
+    cobra:habitaBioma cobra:Cerrado, cobra:Caatinga ;
+    cobra:possuiDenticao cobra:Opistoglifa .
+
+cobra:CobraVerde a cobra:Colubridae ;
+    cobra:nomeCientifico "Erythrolamprus reginae" ;
+    cobra:nomePopular "Cobra-verde-de-jardim" ;
+    cobra:comprimentoMedioMetros 0.6 ;
+    cobra:eNoturna false ;
+    cobra:nivelRiscoAcidente 1 ;
+    cobra:alimentacao "Sapos e girinos" ;
+    cobra:habitaBioma cobra:Amazonia, cobra:MataAtlantica ;
+    cobra:possuiDenticao cobra:Opistoglifa .
+
+cobra:FalsaJararaca a cobra:Colubridae ;
+    cobra:nomeCientifico "Xenodon merremii" ;
+    cobra:nomePopular "Boipeva / Falsa-Jararaca" ;
+    cobra:comprimentoMedioMetros 1.0 ;
+    cobra:eNoturna false ;
+    cobra:nivelRiscoAcidente 1 ;
+    cobra:alimentacao "Sapos e rãs" ;
+    cobra:habitaBioma cobra:Cerrado, cobra:Caatinga, cobra:MataAtlantica ;
+    cobra:possuiDenticao cobra:Opistoglifa .
+
+# ------------------------------------------------------------------------------
+# Instâncias de Aniliidae (1 Espécie - Não Peçonhenta)
+# ------------------------------------------------------------------------------
+cobra:CobraCega a cobra:Aniliidae ;
+    cobra:nomeCientifico "Anilius scytale" ;
+    cobra:nomePopular "Cobra-cega" ;
+    cobra:comprimentoMedioMetros 0.7 ;
+    cobra:eNoturna true ;
+    cobra:nivelRiscoAcidente 1 ;
+    cobra:alimentacao "Anfíbios subterrâneos e peixes-cobra" ;
+    cobra:habitaBioma cobra:Amazonia ;
+    cobra:possuiDenticao cobra:Aglifa .
